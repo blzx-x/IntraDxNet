@@ -1,0 +1,41 @@
+# 含内网地址、账号口令的本机备份，禁止提交
+.local/
+
+# 环境变量与本地覆盖配置
+.env
+.env.*
+*.local.yaml
+*.local.json
+
+# 模型权重与中间结果（单文件约 500MB，超过 GitHub 100MB 硬限制）
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.pkl
+*.npy
+*.npz
+work_dirs/
+
+# 动态库。OpenCV 单文件 55–80MB，超过 GitHub 50MB 建议阈值；
+# KFB 读取库为厂商二进制，请在部署机器上单独放置，不要进仓库。
+*.so
+*.so.*
+**/linux/libopencv_world*
+**/linux/ubuntu20-libopencv_world*
+**/linux/libhzzt*
+**/linux/libpng*
+**/linux/_kfbReader.so
+
+# Python 缓存与日志
+__pycache__/
+*.py[cod]
+*.log
+.ipynb_checkpoints/
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
